@@ -1,0 +1,33 @@
+[project]
+name = "agent-core-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.139.0",
+    "pydantic>=2.13.4",
+    "uvicorn>=0.51.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.21",
+    "ty>=0.0.59",
+]
+
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.lint]
+# E: pycodestyle, F: pyflakes, I: isort, D: pydocstyle, UP: pyupgrade, B: bugbear
+select = ["E", "F", "I", "D", "UP", "B"]
+
+[tool.ruff.lint.isort]
+# Ensures all imports are sorted alphabetically and pushed to the top of the file
+combine-as-imports = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google2"
