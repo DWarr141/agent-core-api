@@ -1,4 +1,6 @@
+"""Models for tasks."""
 from pydantic import BaseModel, Field
+
 
 class TaskBase(BaseModel):
     """Model for the base task."""

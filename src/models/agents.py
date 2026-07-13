@@ -1,4 +1,6 @@
+"""Models for agents."""
 from pydantic import BaseModel, Field
+
 
 class AgentBase(BaseModel):
     """Base model for an agent."""

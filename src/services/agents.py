@@ -1,8 +1,11 @@
+"""Services for agents."""
 from fastapi import APIRouter, HTTPException
+
 from src.models.agents import AgentCreate, AgentResponse
 
 router = APIRouter(tags=["agents"])
 agents: dict[int, AgentResponse] = {}
+
 
 @router.post("/agents", response_model=AgentResponse)
 async def create_agent(agent: AgentCreate) -> AgentResponse:

@@ -1,8 +1,11 @@
+"""Services for tasks."""
 from fastapi import APIRouter, HTTPException
+
 from src.models.tasks import TaskCreate, TaskResponse
 
 router = APIRouter(tags=["tasks"])
 tasks: dict[int, TaskResponse] = {}
+
 
 @router.post("/tasks", response_model=TaskResponse)
 async def create_task(task: TaskCreate) -> TaskResponse:
