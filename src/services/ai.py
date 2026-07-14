@@ -1,6 +1,7 @@
 """AI services for the application."""
 
 from fastapi import APIRouter
+
 from src.agents.analysis_agent import analysis_agent
 from src.models.analysis import AgentAnalysisRequest, AgentAnalysisResult
 

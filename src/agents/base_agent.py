@@ -1,7 +1,5 @@
 """Base agents for the application."""
 
-from pydantic import BaseModel, Field
-from pydantic_ai import Agent
 from pydantic_ai.models.anthropic import AnthropicModel
 from pydantic_ai.providers.anthropic import AnthropicProvider
 
@@ -11,7 +9,9 @@ if settings.minimax_api_key is None:
     raise ValueError("MINIMAX_API_KEY is not set")
 
 class BaseAgent:
+    """Base agent for the application."""
     def __init__(self, name: str):
+        """Initialize the base agent."""
         self.name = name
 
 minimax_model = AnthropicModel(

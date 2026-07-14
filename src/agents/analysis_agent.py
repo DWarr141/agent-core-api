@@ -1,12 +1,17 @@
+"""Analysis agent for the application."""
 from pydantic_ai import Agent
 from pydantic_ai.models.anthropic import AnthropicModel
 from pydantic_ai.providers.anthropic import AnthropicProvider
-from src.agents.base_agent import BaseAgent, minimax_model
+
+from src.agents.base_agent import BaseAgent
 from src.config.settings import settings
-from src.models.analysis import AgentAnalysisRequest, AgentAnalysisResult
+from src.models.analysis import AgentAnalysisResult
+
 
 class AnalysisAgent(BaseAgent):
+    """Analysis agent for the application."""
     def __init__(self, name: str):
+        """Initialize the analysis agent."""
         super().__init__(name)
 
         self.model = AnthropicModel(
