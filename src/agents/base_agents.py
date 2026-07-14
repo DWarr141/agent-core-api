@@ -2,8 +2,8 @@
 
 from pydantic import BaseModel, Field
 from pydantic_ai import Agent
-from pydantic_ai.models.openai import OpenAIChatModel
-from pydantic_ai.providers.openai import OpenAIProvider
+from pydantic_ai.models.anthropic import AnthropicModel
+from pydantic_ai.providers.anthropic import AnthropicProvider
 
 from src.config.settings import settings
 
@@ -20,9 +20,9 @@ class AgentAnalysisResult(BaseModel):
     )
 
 
-minimax_model = OpenAIChatModel(
+minimax_model = AnthropicModel(
     "MiniMax-M2.7",
-    provider=OpenAIProvider(
+    provider=AnthropicProvider(
         base_url=settings.minimax_base_url,
         api_key=settings.minimax_api_key,
     ),

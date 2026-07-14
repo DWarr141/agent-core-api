@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     debug: bool = False
 
     minimax_api_key: str | None = None
-    minimax_base_url: str = "https://api.minimax.io/v1"
+    minimax_base_url: str = "https://api.minimax.io/anthropic"
 
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", extra="ignore"
