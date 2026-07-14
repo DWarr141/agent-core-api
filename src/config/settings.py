@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     """Application settings."""
+
     api_name: str = "Agent Core API"
     api_version: str = "1.0.0"
     app_env: str = "development"
