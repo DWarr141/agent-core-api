@@ -1,12 +1,10 @@
 """Analysis agent for the application."""
 from typing import Any
+
 from pydantic_ai import Agent
-from pydantic_ai.models.anthropic import AnthropicModel
-from pydantic_ai.providers.anthropic import AnthropicProvider
 from pydantic_ai.models import KnownModelName
 
 from src.agents.base_agent import BaseAgent
-from src.config.settings import settings
 from src.models.agent_response import AgentResponse
 
 

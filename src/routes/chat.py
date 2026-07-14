@@ -3,8 +3,8 @@ from fastapi import APIRouter
 from pydantic_ai.models.anthropic import AnthropicModel
 from pydantic_ai.providers.anthropic import AnthropicProvider
 
-from src.config.settings import settings
 from src.agents.analysis_agent import AnalysisAgent
+from src.config.settings import settings
 from src.models.agent_response import AgentRequest, AgentResponse
 
 router = APIRouter(prefix="/chat", tags=["Chat Operations"])
