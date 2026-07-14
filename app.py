@@ -6,8 +6,8 @@ This API provides a RESTful interface for managing agents and tasks.
 from fastapi import FastAPI
 
 from src.config.settings import settings
+from src.routes.chat import router as chat_router
 from src.services.agents import router as agents_router
-from src.services.ai import router as ai_router
 from src.services.tasks import router as tasks_router
 
 app = FastAPI(
@@ -18,7 +18,7 @@ app = FastAPI(
 
 app.include_router(agents_router)
 app.include_router(tasks_router)
-app.include_router(ai_router)
+app.include_router(chat_router)
 
 
 @app.get("/health")

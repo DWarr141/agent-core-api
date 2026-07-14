@@ -2,11 +2,11 @@
 from pydantic import BaseModel, Field
 
 
-class AgentAnalysisRequest(BaseModel):
+class AgentRequest(BaseModel):
     """Request for the analysis agent."""
     prompt: str = Field(description="The prompt to analyze.")
 
-class AgentAnalysisResult(BaseModel):
+class AgentResponse(BaseModel):
     """Result for the analysis agent."""
     summary: str = Field(description="A summary of the analysis.")
     primary_intent: str = Field(description="The primary intent of the analysis.")
