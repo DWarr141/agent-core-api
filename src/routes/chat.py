@@ -18,7 +18,7 @@ minimax_model = AnthropicModel(
 )
 
 analysis_agent = AnalysisAgent(name="analysis_agent", model=minimax_model)
-@router.post("/analysis", response_model=AgentResponse)
+@router.post("/", response_model=AgentResponse)
 async def analyze_prompt(request: AgentRequest) -> AgentResponse:
     """Analyze a prompt using the analysis agent."""
     result = await analysis_agent.agent.run(request.prompt)
