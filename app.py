@@ -7,8 +7,6 @@ from fastapi import FastAPI
 
 from src.config.settings import settings
 from src.routes.chat import router as chat_router
-from src.services.agents import router as agents_router
-from src.services.tasks import router as tasks_router
 
 app = FastAPI(
     title=settings.api_name,
@@ -16,8 +14,6 @@ app = FastAPI(
     debug=settings.debug,
 )
 
-app.include_router(agents_router)
-app.include_router(tasks_router)
 app.include_router(chat_router)
 
 
